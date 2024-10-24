@@ -18,6 +18,7 @@ def display_matrix(matrix):
                 label.grid(row=i, column=j)
                 
         window.mainloop()
+
     except TypeError:
         window.destroy()
         return
