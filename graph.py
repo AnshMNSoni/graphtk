@@ -18,14 +18,14 @@ class Graph:
                 vertex1, vertex2 = edge[0], edge[1]
                 adj[vertex1].append(vertex2)
                 adj[vertex2].append(vertex1)  
-                
+            print(adj)
             adj_matrix = [[0 for _ in range(length)] for _ in range(length)]
             
             for i in range(length):
                 for j in range(length):
                     cnt = adj[G.vertices[i]].count(G.vertices[j])
                     adj_matrix[i][j] = cnt
-             
+            
             return adj_matrix
         except TypeError:
             return
@@ -46,11 +46,17 @@ class Graph:
                 self.window.label.grid(row=0, column=1)
                 
                 try:
-                    for _ in range(num):
-                        edges.append((i, vertices[j]))
+                    if(num!=0):
+                        if(i == vertices[j]):
+                            edges.append((i, vertices[j]))
+                        else:
+                            for _ in range(num):
+                                edges.append((i, vertices[j]))
+                            
                 except TypeError:
                     edges = None
                     messagebox.showerror(title="Try Again!", message="Edges cannot be empty.")
+                    return
                 finally:
                     self.window.destroy()
                     
@@ -97,13 +103,19 @@ class Graph:
                 self.window.label.grid(row=0, column=1)
                 
                 try:
-                    for _ in range(num):
-                        edges.append((i, vertices[j]))
+                    if(num!=0):
+                        if(i == vertices[j]):
+                            edges.append((i, vertices[j]))
+                        else:
+                            for _ in range(num):
+                                edges.append((i, vertices[j]))
+                            
                 except TypeError:
                     edges = None
                     messagebox.showerror(title="Try Again!", message="Edges cannot be empty.")
                 finally:
                     self.window.destroy()
+                    
         return edges
     
     
