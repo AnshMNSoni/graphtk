@@ -17,26 +17,24 @@ class GUI:
         self.img = PhotoImage(file='./main_bg.png')
         self.label = Label(image=self.img)
         self.label.config(width=1000, height=600)
-        self.label.grid(row=0, column=0, rowspan=4)
+        self.label.grid(row=0, column=0, columnspan=2)
         
-        self.undigraph = Button(text="Undirected Graph", command=self.to_undiGraph, font=FONT, bg=BG, fg=FG, bd=3, highlightthickness=0)
+        self.undigraph = Button(text="Undirected Graph Analysis", command=self.to_undiGraph, font=FONT, bg=BG, fg=FG, bd=3, highlightthickness=0)
         self.undigraph.grid(row=0, column=0)
         
-        self.undimatrix = Button(text="Undirected Matrix", command=self.to_undiMatrix, font=FONT, bg=BG, fg=FG, bd=3, highlightthickness=0)
-        self.undimatrix.grid(row=1, column=0)
-        
-        self.digraph = Button(text="Directed Graph", command=self.to_diGraph, font=FONT, bg=BG, fg=FG, bd=3, highlightthickness=0)
-        self.digraph.grid(row=2, column=0)
-        
-        self.dimatrix = Button(text="Directed Matrix", command=self.to_diMatrix, font=FONT, bg=BG, fg=FG, bd=3, highlightthickness=0)
-        self.dimatrix.grid(row=3, column=0)
+        self.digraph = Button(text="Directed Graph Analysis", command=self.to_diGraph, font=FONT, bg=BG, fg=FG, bd=3, highlightthickness=0)
+        self.digraph.grid(row=0, column=1)
         
         self.window.mainloop()
         
         
     def to_undiGraph(self):
-        try:
-            self.destroyButtons()
+            self.destroyMainPageButtons()
+            self.window.destroy()
+            UndirectedGUI()
+        
+    def inside_undiGraph(self):
+        try:    
             user = simpledialog.askstring("Input", "Enter the vertices of the Graph:\n\nNote: Leave empty space while entering vertices\n\nExample: A B C").upper().split()
             
             if(user != []):
@@ -55,8 +53,12 @@ class GUI:
         
     
     def to_diGraph(self):
+        self.destroyMainPageButtons()
+        self.window.destroy()
+        DirectedGUI()
+    
+    def inside_diGraph(self):
         try:
-            self.destroyButtons()
             user = simpledialog.askstring("Input", "Enter the vertices of the Graph:\n\nNote: Leave empty space while entering vertices\n\nExample: A B C").upper().split()
             
             if(user != []):
@@ -72,11 +74,15 @@ class GUI:
             messagebox.showerror(title="Try again", message="Something went wrong.")
             self.window.destroy()
             GUI()
-    
-    
+            
+            
     def to_undiMatrix(self):
+        self.destroyMainPageButtons()
+        self.window.destroy()
+        UndirectedGUI()
+    
+    def inside_undiMatrix(self):
         try:
-            self.destroyButtons()
             user = simpledialog.askstring("Input", "Enter the vertices of the Graph:\n\nNote: Leave empty space while entering vertices\n\nExample: A B C").upper().split()
             
             if(user != []):
@@ -89,7 +95,6 @@ class GUI:
                 self.window.destroy()
                 GUI()
                 
-                
         except AttributeError:
             messagebox.showerror(title="Try again", message="Something went wrong.")
             self.window.destroy()
@@ -97,8 +102,12 @@ class GUI:
     
     
     def to_diMatrix(self):
+        self.destroyMainPageButtons()
+        self.window.destroy()
+        DirectedGUI()
+    
+    def inside_diMatrix(self):
         try:
-            self.destroyButtons()
             user = simpledialog.askstring("Input", "Enter the vertices of the Graph:\n\nNote: Leave empty space while entering vertices\n\nExample: A B C").upper().split()
             
             if(user != []):
@@ -117,11 +126,48 @@ class GUI:
             GUI()
         
         
-    def destroyButtons(self):
+    def destroyMainPageButtons(self):
         self.undigraph.destroy()
         self.digraph.destroy()
-        self.undimatrix.destroy()
-        self.dimatrix.destroy()
     
+
+class UndirectedGUI(GUI):
+    def __init__(self):
+        self.window = Tk()
+        self.window.title("Graph Theory")
+        self.Graph = namedtuple('Graph', ['vertices', 'edges'])
+        
+        self.img = PhotoImage(file='./main_bg.png')
+        self.label = Label(image=self.img)
+        self.label.config(width=1000, height=600)
+        self.label.grid(row=0, column=0, columnspan=2)
+        
+        self.undigraph = Button(text="Graph Visualisation", command=super().inside_undiGraph, font=FONT, bg=BG, fg=FG, bd=3, highlightthickness=0)
+        self.undigraph.grid(row=0, column=0)
+        
+        self.undimatrix = Button(text="Adjacency Matrix", command=super().inside_undiMatrix, font=FONT, bg=BG, fg=FG, bd=3, highlightthickness=0)
+        self.undimatrix.grid(row=0, column=1)
+        
+        self.window.mainloop()
+
+
+class DirectedGUI(GUI):
+    def __init__(self):
+        self.window = Tk()
+        self.window.title("Graph Theory")
+        self.Graph = namedtuple('Graph', ['vertices', 'edges'])
+        
+        self.img = PhotoImage(file='./main_bg.png')
+        self.label = Label(image=self.img)
+        self.label.config(width=1000, height=600)
+        self.label.grid(row=0, column=0, columnspan=2)
+        
+        self.undigraph = Button(text="Graph Visualisation", command=super().inside_diGraph, font=FONT, bg=BG, fg=FG, bd=3, highlightthickness=0)
+        self.undigraph.grid(row=0, column=0)
+        
+        self.undimatrix = Button(text="Adjacency Matrix", command=super().inside_diMatrix, font=FONT, bg=BG, fg=FG, bd=3, highlightthickness=0)
+        self.undimatrix.grid(row=0, column=1)
+        
+        self.window.mainloop()
     
 GUI()
