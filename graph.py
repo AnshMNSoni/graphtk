@@ -8,7 +8,8 @@ class Graph:
     def __init__(self):
         pass
     
-    def adjacency_matrix(self,G):
+    # printing adjacency_matrix
+    def adjacency_matrix(self, G, is_directed=False):
         length = len(G.vertices)
         
         adj = {vertex: [] for vertex in G.vertices}
@@ -17,19 +18,24 @@ class Graph:
             for edge in G.edges:
                 vertex1, vertex2 = edge[0], edge[1]
                 adj[vertex1].append(vertex2)
-                adj[vertex2].append(vertex1)  
-            print(adj)
-            adj_matrix = [[0 for _ in range(length)] for _ in range(length)]
+                
+                if not is_directed:
+                    adj[vertex2].append(vertex1)
             
+            adj_matrix = [[0 for _ in range(length)] for _ in range(length)]
+      
             for i in range(length):
                 for j in range(length):
                     cnt = adj[G.vertices[i]].count(G.vertices[j])
                     adj_matrix[i][j] = cnt
             
             return adj_matrix
+        
         except TypeError:
             return
-
+        
+    
+    # Calculating undirected Graph/Matrix edges
     def undi_edges(self, vertices):
         cnt = 0
         edges = []
@@ -56,7 +62,6 @@ class Graph:
                 except TypeError:
                     edges = None
                     messagebox.showerror(title="Try Again!", message="Edges cannot be empty.")
-                    return
                 finally:
                     self.window.destroy()
                     
@@ -64,6 +69,7 @@ class Graph:
         return edges
     
     
+    # Calculating Undirected adjacency_matrix
     def undiMatrix(self, Graph, vertices):
         edges = self.undi_edges(vertices)
         
@@ -72,7 +78,8 @@ class Graph:
         matrix = self.adjacency_matrix(G)
         return matrix
     
-            
+    
+    # Ploting Undirected Graph
     def undiGraph(self, vertices):
         edges = self.undi_edges(vertices)
         
@@ -88,6 +95,7 @@ class Graph:
             return
     
     
+    # Calculating Directed Graph/Matrix edges
     def di_edges(self, vertices):
         edges = []
             
@@ -119,15 +127,17 @@ class Graph:
         return edges
     
     
+    # Calculating Directed adjacency_matrix
     def diMatrix(self, Graph, vertices):
         edges = self.di_edges(vertices)
         
         G = Graph(vertices=vertices, edges=edges)
         
-        matrix = self.adjacency_matrix(G)
+        matrix = self.adjacency_matrix(G, True)
         return matrix
             
     
+    # Ploting Directed Graph
     def diGraph(self, vertices):
         edges = self.di_edges(vertices)
         
