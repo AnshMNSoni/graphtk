@@ -4,6 +4,7 @@ from tkinter import simpledialog, messagebox
 from graph import *
 from matrix_gui import *
 from sympy import Matrix
+import math
 
 FONT = ('Times New Roman', 16, 'bold')
 FG = '#161D6F'
@@ -152,7 +153,7 @@ class GUI:
                     
                     A = C
                     
-                display_Bmatrix(B_matrix)
+                display_matrix(B_matrix, 'B-Matrix')
                     
             else:
                 messagebox.showwarning(title="Empty Space Found", message="Please, enter atleast one vertex!")
@@ -165,6 +166,7 @@ class GUI:
             GUI()
     
     
+    # Path Matrix:
     def to_pathMatrix(self):
         try:
             user = simpledialog.askstring("Input", "Enter the vertices of the Graph:\n\nNote: Leave empty space while entering vertices\n\nExample: A B C").upper().split()
@@ -191,7 +193,7 @@ class GUI:
                         if(B_matrix[i][j]!=0):
                             B_matrix[i][j] = 1
                 
-                display_pathMatrix(B_matrix)
+                display_matrix(B_matrix, 'Path-Matrix')
                     
             else:
                 messagebox.showwarning(title="Empty Space Found", message="Please, enter atleast one vertex!")
@@ -204,6 +206,41 @@ class GUI:
             GUI()
             
     
+    # Weight Matrix:
+    def to_weightMatrix(self):
+        try:
+            user = simpledialog.askstring("Input", "Enter the vertices of the Graph:\n\nNote: Leave empty space while entering vertices\n\nExample: A B C").upper().split()
+            
+            if(user != []):
+                vertices = list(user)
+                self.window.destroy()
+                
+                matrix = Graph().weightMatrix(vertices)
+                
+                for k in range(len(vertices)):
+                    for i in range(len(vertices)):
+                        for j in range(len(vertices)):
+                            matrix[i][j] = min(matrix[i][j], matrix[i][k]+matrix[k][j])
+                
+                for i in range(len(vertices)): 
+                    for j in range(len(vertices)):
+                        if(matrix[i][j] == math.inf):
+                            matrix[i][j] = 0
+                            
+                display_matrix(matrix, 'Weight-Matrix')
+                    
+            else:
+                messagebox.showwarning(title="Empty Space Found", message="Please, enter atleast one vertex!")
+                self.window.destroy()
+                GUI()
+            
+        except AttributeError:
+            messagebox.showerror(title="Try again", message="Something went wrong.")
+            self.window.destroy()
+            GUI()
+        
+        
+        
     def destroyMainPageButtons(self):
         self.undigraph.destroy()
         self.digraph.destroy()
@@ -238,7 +275,7 @@ class DirectedGUI(GUI):
         self.img = PhotoImage(file='./main_bg.png')
         self.label = Label(image=self.img)
         self.label.config(width=1000, height=600)
-        self.label.grid(row=0, column=0, columnspan=4)
+        self.label.grid(row=0, column=0, columnspan=3,rowspan=2)
         
         self.undigraph = Button(text="Graph Visualisation", command=super().inside_diGraph, font=FONT, bg=BG, fg=FG, bd=3, highlightthickness=0)
         self.undigraph.grid(row=0, column=0)
@@ -246,11 +283,14 @@ class DirectedGUI(GUI):
         self.undimatrix = Button(text="Adjacency Matrix", command=super().inside_diMatrix, font=FONT, bg=BG, fg=FG, bd=3, highlightthickness=0)
         self.undimatrix.grid(row=0, column=1)
         
-        self.di_BMatrix = Button(text="B-Matrix", command=super().to_di_BMatrix, font=FONT, bg=BG, fg=FG, bd=3, highlightthickness=0)
-        self.di_BMatrix.grid(row=0, column=2)
+        self.BMatrix = Button(text="B-Matrix", command=super().to_di_BMatrix, font=FONT, bg=BG, fg=FG, bd=3, highlightthickness=0)
+        self.BMatrix.grid(row=0, column=2)
         
-        self.di_BMatrix = Button(text="Path Matrix", command=super().to_pathMatrix, font=FONT, bg=BG, fg=FG, bd=3, highlightthickness=0)
-        self.di_BMatrix.grid(row=0, column=3)
+        self.pathMatrix = Button(text="Path Matrix", command=super().to_pathMatrix, font=FONT, bg=BG, fg=FG, bd=3, highlightthickness=0)
+        self.pathMatrix.grid(row=1, column=0)
+        
+        self.weightMatrix = Button(text="Weight Matrix", command=super().to_weightMatrix, font=FONT, bg=BG, fg=FG, bd=3, highlightthickness=0)
+        self.weightMatrix.grid(row=1, column=1)
         
         self.window.mainloop()
     
