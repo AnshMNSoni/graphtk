@@ -9,6 +9,7 @@ This repository contains a Python implementation of the famous **adjacency matri
 - [Dependencies](#dependencies)
 - [Example](#example)
 - [Output Format](#output-format)
+- [Contact](#contact)
 
 ## Introduction
 An Adjacency Matrix is a square matrix used to represent a graph, where:
@@ -89,5 +90,9 @@ matrix = adjacency_matrix(G)
 │ 1 │ 1 │ 1 │ 0 │
 ╘═══╧═══╧═══╧═══╛
 ```
+
+## Contact
+
+If you have any questions or suggestions, feel free to reach out to me at [LinkedIn](https://www.linkedin.com/in/anshmnsoni/).
 
 ## Thankyou
