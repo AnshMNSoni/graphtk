@@ -2,6 +2,7 @@ import networkx as nx
 from tkinter import simpledialog, messagebox
 from tkinter import *
 import matplotlib.pyplot as plt
+import math
 
 
 class Graph:
@@ -151,3 +152,32 @@ class Graph:
             plt.show()
         except TypeError:
             return
+        
+    
+    def weightMatrix(self, vertices):
+        length = len(vertices)
+        weight_matrix = [[0 for _ in range(length)] for _ in range(length)]
+            
+        for i in range(len(vertices)):
+            for j in range(len(vertices)):
+                self.window = Tk()    
+                self.img = PhotoImage(file='./main_bg.png')
+                self.window.label = Label(image=self.img)
+                self.window.label.grid(row=0, column=0)
+                
+                num = simpledialog.askinteger("Input", "Enter the distance require to travel from " + vertices[i] + " to " + vertices[j] + ": ")
+                self.window.label = Label(text=num)
+                self.window.label.grid(row=0, column=1)
+                
+                try:
+                    if(num!=0):
+                        weight_matrix[i][j] = num
+                    else:
+                        weight_matrix[i][j] = math.inf
+                            
+                except TypeError:
+                    messagebox.showerror(title="Try Again!", message="Edges cannot be empty.")
+                finally:
+                    self.window.destroy()
+                    
+        return weight_matrix
