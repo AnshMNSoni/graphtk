@@ -91,8 +91,7 @@ matrix = adjacency_matrix(G)
 ╘═══╧═══╧═══╧═══╛
 ```
 
-## Contact
+## Preview:
+![image](https://github.com/user-attachments/assets/40de6778-24c1-47a5-a823-14c93cb77686)
 
-If you have any questions or suggestions, feel free to reach out to me at [LinkedIn](https://www.linkedin.com/in/anshmnsoni/).
 
-## Thankyou
