@@ -94,4 +94,11 @@ matrix = adjacency_matrix(G)
 ## Preview:
 ![image](https://github.com/user-attachments/assets/40de6778-24c1-47a5-a823-14c93cb77686)
 
+### 📢 Connect with Me
+If you found this project helpful or have any suggestions, feel free to connect:
 
+- [![LinkedIn](https://img.shields.io/badge/LinkedIn-anshmnsoni-0077B5.svg?logo=linkedin)](https://www.linkedin.com/in/anshmnsoni)  
+- [![GitHub](https://img.shields.io/badge/GitHub-AnshMNSoni-181717.svg?logo=github)](https://github.com/AnshMNSoni)
+- [![Reddit](https://img.shields.io/badge/Reddit-u/AnshMNSoni-FF4500.svg?logo=reddit)](https://www.reddit.com/user/AnshMNSoni)
+
+### Thankyou 💫 
