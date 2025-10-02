@@ -67,8 +67,17 @@ print(edges)
 2️⃣ Adjacency Matrix, Path Matrix, Weight Matrix, B-Matrix
 - Syntax
 ```
+# adjacency matrix
 adjacency_matrix(edges: list, vertices: list, is_directed: bool)
+
+# weight matrix
 weight_matrix(edges: list, vertices: list, is_directed: bool = None)
+
+# path matrix
+path_matrix(edges: list, vertices: list, is_directed: bool = None)
+
+# B-matrix
+b_matrix(edges: list, vertices: list, is_directed: bool = None)
 ```
 - Implementation 
 ```
@@ -93,51 +102,296 @@ matrix = tk.weight_matrix(edges, vertices)
 matrix = tk.b_matrix(edges, vertices)
 ```
 
-3️⃣ Graph Terminologies
-➡️ Syntax
-- paths
+3️⃣ Graph Terminologies<br/>
+➡️ Paths
+- Syntax
 ```
 paths(edges: list, vertices: list, is_directed: bool)
 ```
+- Implementation
+```
+from graphtk.toolkit import Toolkit
+
+tk = Toolkit()
+
+vertices = ['A', 'B', 'C']
+edges = [('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('B', 'B'), ('B', 'B'), ('C', 'A')]
+
+result = tk.paths(edges, vertices, True)
+print(result)
+```
+
 ➡️ trails 
+- Syntax
 ```
 trails(edges: list, vertices: list, is_directed: bool)
 ```
+- Implementation
+```
+from graphtk.toolkit import Toolkit
+
+tk = Toolkit()
+
+vertices = ['A', 'B', 'C']
+edges = [('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('B', 'B'), ('B', 'B'), ('C', 'A')]
+
+result = tk.trails(edges, vertices, True)
+print(result)
+```
 ➡️ cycle
+- Syntax
 ```
 cycle(edges: list, vertices: list, is_directed: bool)
 ```
+- Implementation
+```
+from graphtk.toolkit import Toolkit
+
+tk = Toolkit()
+
+vertices = ['A', 'B', 'C']
+edges = [('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('B', 'B'), ('B', 'B'), ('C', 'A')]
+
+result = tk.cycle(edges, vertices, True)
+print(result)
+```
 ➡️ simplepath
+- Syntax
 ```
 simplepath(edges: list, vertices: list, is_directed: bool)
 ```
+- Implementation
+```
+from graphtk.toolkit import Toolkit
+
+tk = Toolkit()
+
+vertices = ['A', 'B', 'C']
+edges = [('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('B', 'B'), ('B', 'B'), ('C', 'A')]
+
+result = tk.simplepath(edges, vertices, True)
+print(result)
+```
+➡️ adjacency_list
+- Syntax
+```
+adjacency_list(self, edges: list, vertices: list, is_directed: bool)
+```
+- Implementation
+```
+from graphtk.toolkit import Toolkit
+
+tk = Toolkit()
+
+vertices = ['A', 'B', 'C']
+edges = [('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('B', 'B'), ('B', 'B'), ('C', 'A')]
+
+result = tk.adjacency_list(edges, vertices, True)
+print(result)
+```
 ➡️ is_path
+- Syntax
 ```
 is_path(edges: list, vertices: list, is_directed: bool, path: dict)
 ```
+- Implementation
+```
+from graphtk.toolkit import Toolkit
+
+tk = Toolkit()
+
+vertices = ['A', 'B', 'C']
+edges = [('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('B', 'B'), ('B', 'B'), ('C', 'A')]
+
+result = tk.is_path(edges, vertices, True, {'A': [['A'], ['C', 'A']]})
+print(result)
+```
 ➡️ is_trail
+- Syntax
 ```
 is_trail(self, edges: list, vertices: list, is_directed: bool, trail: dict)
 ```
+- Implementation
+```
+from graphtk.toolkit import Toolkit
+
+tk = Toolkit()
+
+vertices = ['A', 'B', 'C']
+edges = [('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('B', 'B'), ('B', 'B'), ('C', 'A')]
+
+result = tk.is_trail(edges, vertices, True, {'A': [['A'], ['C', 'A']]})
+print(result)
+```
 ➡️ is_cycle
+- Syntax
 ```
 is_cycle(self, edges: list, vertices: list, is_directed: bool, cycle: dict)
 ```
+- Implementation
+```
+from graphtk.toolkit import Toolkit
+
+tk = Toolkit()
+
+vertices = ['A', 'B', 'C']
+edges = [('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('B', 'B'), ('B', 'B'), ('C', 'A')]
+
+result = tk.is_cycle(edges, vertices, True, {'A': [['A'], ['C', 'A']]})
+print(result)
+```
 ➡️ is_simplepath
+- Syntax
 ```
 is_simplepath(self, edges: list, vertices: list, is_directed: bool, path: dict)
 ```
+- Implementation
+```
+from graphtk.toolkit import Toolkit
+
+tk = Toolkit()
+
+vertices = ['A', 'B', 'C']
+edges = [('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('B', 'B'), ('B', 'B'), ('C', 'A')]
+
+result = tk.is_simplepath(edges, vertices, True, {'A': [['A'], ['C', 'A']]})
+print(result)
+```
 ➡️ is_traversable
+- Syntax
 ```
 is_traversable(self, edges: list, vertices: list, is_directed: bool)
 ```
+- Implementation
+```
+from graphtk.toolkit import Toolkit
+
+tk = Toolkit()
+
+vertices = ['A', 'B', 'C']
+edges = [('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('B', 'B'), ('B', 'B'), ('C', 'A')]
+
+result = tk.is_traversable(edges, vertices, True)
+print(result)
+```
 ➡️ is_euler
+- Syntax
 ```
 is_euler(self, edges: list, vertices: list, is_directed: bool)
 ```
+- Implementation
+```
+from graphtk.toolkit import Toolkit
+
+tk = Toolkit()
+
+vertices = ['A', 'B', 'C']
+edges = [('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('B', 'B'), ('B', 'B'), ('C', 'A')]
+
+result = tk.is_euler(edges, vertices, True)
+print(result)
+```
 ➡️ is_hamilton
+- Syntax
 ```
 is_hamilton(self, edges: list, vertices: list, is_directed: bool)
+```
+- Implementation
+```
+from graphtk.toolkit import Toolkit
+
+tk = Toolkit()
+
+vertices = ['A', 'B', 'C']
+edges = [('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('B', 'B'), ('B', 'B'), ('C', 'A')]
+
+result = tk.is_hamilton(edges, vertices, True)
+print(result)
+```
+➡️ is_complete
+- Syntax
+```
+is_complete(self, edges: list, vertices: list, is_directed: bool)
+```
+- Implementation
+```
+from graphtk.toolkit import Toolkit
+
+tk = Toolkit()
+
+vertices = ['A', 'B', 'C']
+edges = [('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('B', 'B'), ('B', 'B'), ('C', 'A')]
+
+result = tk.is_complete(edges, vertices, True)
+print(result)
+```
+➡️ is_regular
+- Syntax
+```
+is_regular(self, edges: list, vertices: list, is_directed: bool)
+```
+- Implementation
+```
+from graphtk.toolkit import Toolkit
+
+tk = Toolkit()
+
+vertices = ['A', 'B', 'C']
+edges = [('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('B', 'B'), ('B', 'B'), ('C', 'A')]
+
+result = tk.is_regular(edges, vertices, True)
+print(result)
+```
+➡️ is_bipartite
+- Syntax
+```
+is_bipartite(self, edges: list, vertices: list, is_directed: bool)
+```
+- Implementation
+```
+from graphtk.toolkit import Toolkit
+
+tk = Toolkit()
+
+vertices = ['A', 'B', 'C']
+edges = [('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('B', 'B'), ('B', 'B'), ('C', 'A')]
+
+result = tk.is_bipartite(edges, vertices, True)
+print(result)
+```
+➡️ is_planner
+- Syntax
+```
+is_planner(self, edges: list, vertices: list, is_directed: bool)
+```
+- Implementation
+```
+from graphtk.toolkit import Toolkit
+
+tk = Toolkit()
+
+vertices = ['A', 'B', 'C']
+edges = [('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('B', 'B'), ('B', 'B'), ('C', 'A')]
+
+result = tk.is_planner(edges, vertices, True)
+print(result)
+```
+➡️ vertex_coloring
+- Syntax
+```
+vertex_coloring(self, edges: list, vertices: list, is_directed: bool = None)
+```
+- Implementation
+```
+from graphtk.toolkit import Toolkit
+
+tk = Toolkit()
+
+vertices = ['A', 'B', 'C']
+edges = [('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'A'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('A', 'B'), ('B', 'B'), ('B', 'B'), ('C', 'A')]
+
+result = tk.vertex_coloring(edges, vertices)
+print(result)
 ```
 
 ## 📢 Connect with Me
