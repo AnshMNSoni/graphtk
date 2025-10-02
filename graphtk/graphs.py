@@ -1,4 +1,4 @@
-from graph_init import namedtuple
+from graphtk.graph_init import namedtuple
 
 class Graph:
     def __init__(self):
@@ -111,7 +111,7 @@ class Graph:
     def is_simplepath(self, edges: list, vertices: list, is_directed: bool, path: dict):
         if len(set(path)) != len(path):
             return False
-        return self.ispath(edges, vertices, is_directed, path)
+        return self.is_path(edges, vertices, is_directed, path)
 
     def is_traversable(self, edges: list, vertices: list, is_directed: bool):
         G = namedtuple(edges, vertices, is_directed)
@@ -127,7 +127,7 @@ class Graph:
 
     def is_euler(self, edges: list, vertices: list, is_directed: bool):
         G = namedtuple(edges, vertices, is_directed)
-        if not self.istraversable(edges, vertices, is_directed):
+        if not self.is_traversable(edges, vertices, is_directed):
             return False
         degrees = [len(G[v]) for v in vertices]
         odd = sum(d % 2 for d in degrees)

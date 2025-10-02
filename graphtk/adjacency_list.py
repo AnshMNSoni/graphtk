@@ -1,4 +1,4 @@
-from graph_init import namedtuple
+from graphtk.graph_init import namedtuple
 
 class AdjacencyList:
     def __init__(self):

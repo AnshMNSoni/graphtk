@@ -1,6 +1,6 @@
 # 4 color theorm
 
-from graph_init import namedtuple
+from graphtk.graph_init import namedtuple
 
 class GraphColoring:
     def __init__(self):

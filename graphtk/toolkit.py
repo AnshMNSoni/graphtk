@@ -1,8 +1,8 @@
-from edges import Edge
-from graphs import Graph
-from matrix import Matrices
-from graph_coloring import GraphColoring
-from adjacency_list import AdjacencyList
+from graphtk.edges import Edge
+from graphtk.graphs import Graph
+from graphtk.matrix import Matrices
+from graphtk.graph_coloring import GraphColoring
+from graphtk.adjacency_list import AdjacencyList
 
 class Toolkit:
     def __init__(self):
@@ -29,7 +29,7 @@ class Toolkit:
     def cycle(self, edges: list, vertices: list, is_directed):
         return self.graphs.cycle(edges, vertices, is_directed)
     
-    def simplePath(self, edges: list, vertices: list, is_directed):
+    def simplepath(self, edges: list, vertices: list, is_directed):
         return self.graphs.simplepath(edges, vertices, is_directed)
     
     def is_path(self, edges: list, vertices: list, is_directed: bool, path: dict):
