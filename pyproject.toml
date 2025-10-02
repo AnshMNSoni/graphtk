@@ -3,10 +3,10 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "gtk"
+name = "graphtk"
 version = "1.0.0"                   
 description = "Graph Theory Toolkit (GTK)"
-authors = [{name = "Ansh Soni", email = "developers.pyshell@gmail.com"}]  
+authors = [{name = "Ansh Soni", email = "ansh.mn.soni7505@gmail.com"}]  
 readme = "README.md"               
 requires-python = ">=3.7"          
 
