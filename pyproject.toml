@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "graphtk"
-version = "1.0.0"                   
+version = "1.0.1"                   
 description = "Graph Theory Toolkit (GraphTK)"
 authors = [{name = "Ansh Soni", email = "ansh.mn.soni7505@gmail.com"}]  
 readme = "README.md"               
 requires-python = ">=3.7"          
 
 [project.scripts]
-pyshellcli = "gtk.main:main"  
+pyshellcli = "graphtk.main:main"  
