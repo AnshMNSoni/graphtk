@@ -1,5 +1,9 @@
 # Graph Theory Toolkit (GraphTK):
 
+<div align="center">
+    <img width="438" height="438" alt="gtk-logo" src="https://github.com/user-attachments/assets/1df1df20-86f3-4415-88b7-b6f72557fe58" />
+</div>
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Basic Terminologies](#basic-terminologies)
