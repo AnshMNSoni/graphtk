@@ -1,0 +1,2 @@
+[console_scripts]
+pyshellcli = graphtk.main:main
