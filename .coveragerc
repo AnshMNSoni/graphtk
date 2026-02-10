@@ -1,0 +1,20 @@
+[run]
+source = graphtk
+omit =
+    tests/*
+    */__pycache__/*
+    */dist/*
+    */graphtk.egg-info/*
+
+[report]
+show_missing = true
+fail_under = 60
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    if __name__ == .__main__
+    raise NotImplementedError
+    pass
+
+[html]
+directory = htmlcov
