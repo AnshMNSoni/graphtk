@@ -2,9 +2,9 @@
 
 [![Downloads](https://static.pepy.tech/badge/graphtk)](https://pepy.tech/project/graphtk)
 [![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
-[![PyPI version](https://img.shields.io/pypi/v/pythonstl.svg)](https://pypi.org/project/graphtk/)
+[![PyPI version](https://img.shields.io/pypi/v/graphtk.svg)](https://pypi.org/project/graphtk/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.1.1-brightgreen.svg)](https://github.com/AnshMNSoni/graphtk)
+[![Version](https://img.shields.io/badge/version-1.0.1-brightgreen.svg)](https://github.com/AnshMNSoni/graphtk)
 <br>
 
 <div align="center">
