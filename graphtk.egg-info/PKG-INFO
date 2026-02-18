@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: graphtk
-Version: 1.0.1
+Version: 1.0.2
 Summary: Graph Theory Toolkit (GraphTK)
 Author-email: Ansh Soni <ansh.mn.soni7505@gmail.com>
 Requires-Python: >=3.7
