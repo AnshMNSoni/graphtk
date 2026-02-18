@@ -1,5 +1,12 @@
 # Graph Theory Toolkit (GraphTK):
 
+[![Downloads](https://static.pepy.tech/badge/graphtk)](https://pepy.tech/project/graphtk)
+[![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
+[![PyPI version](https://img.shields.io/pypi/v/pythonstl.svg)](https://pypi.org/project/graphtk/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-0.1.1-brightgreen.svg)](https://github.com/AnshMNSoni/graphtk)
+<br>
+
 <div align="center">
     <img width="438" height="438" alt="gtk-logo" src="https://github.com/user-attachments/assets/1df1df20-86f3-4415-88b7-b6f72557fe58" />
 </div>
