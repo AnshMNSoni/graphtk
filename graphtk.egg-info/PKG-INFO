@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: graphtk
-Version: 1.0.1
+Version: 1.0.2
 Summary: Graph Theory Toolkit (GraphTK)
 Author-email: Ansh Soni <ansh.mn.soni7505@gmail.com>
 Requires-Python: >=3.7
@@ -9,6 +9,17 @@ License-File: LICENSE
 Dynamic: license-file
 
 # Graph Theory Toolkit (GraphTK):
+
+[![Downloads](https://static.pepy.tech/badge/graphtk)](https://pepy.tech/project/graphtk)
+[![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
+[![PyPI version](https://img.shields.io/pypi/v/graphtk.svg)](https://pypi.org/project/graphtk/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.0.1-brightgreen.svg)](https://github.com/AnshMNSoni/graphtk)
+<br>
+
+<div align="center">
+    <img width="438" height="438" alt="gtk-logo" src="https://github.com/user-attachments/assets/1df1df20-86f3-4415-88b7-b6f72557fe58" />
+</div>
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -411,4 +422,4 @@ If you found this project helpful or have any suggestions, feel free to connect:
 - [![GitHub](https://img.shields.io/badge/GitHub-AnshMNSoni-181717.svg?logo=github)](https://github.com/AnshMNSoni)
 - [![Reddit](https://img.shields.io/badge/Reddit-u/AnshMNSoni-FF4500.svg?logo=reddit)](https://www.reddit.com/user/AnshMNSoni)
 
-### Thankyou 💫 
+## Thankyou
